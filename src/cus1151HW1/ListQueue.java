@@ -5,6 +5,11 @@ public class ListQueue {
 		//TODO Implement Linked List Node
 		private String data;
 		private Node next;
+		public Node() {
+			this.data=null;
+			this.next=null;
+		}
+		
 		public Node(String a) {
 			this.data=a;
 			this.next=null;
@@ -27,12 +32,16 @@ public class ListQueue {
 	Node tail;
 	//Class variables here, if necessary
 	
-	
+	public ListQueue(){
+		this.head=new Node();
+		this.tail=this.head;
+		
+		//TODO Implement constructor
+	}
 	public ListQueue(String a){
 		this.head=new Node(a);
 		this.tail=this.head;
 		
-		//TODO Implement constructor
 	}
 	
 	public void enqueue(String toInput) {
