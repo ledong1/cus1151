@@ -38,11 +38,7 @@ public class ListQueue {
 		
 		//TODO Implement constructor
 	}
-	public ListQueue(String a){
-		this.head=new Node(a);
-		this.tail=this.head;
-		
-	}
+	
 	
 	public void enqueue(String toInput) {
 		Node newNode=new Node(toInput);
@@ -52,23 +48,21 @@ public class ListQueue {
 	}
 	
 	public String dequeue(){
-		if (this.head.show()!=null) {
-			String data=this.head.show();
+		if (this.head.next!=null) {
+			String data=this.head.next.show();
 			this.head=this.head.next();
 			return data;
-			
 		}
 		// TODO Implement dequeue
 		return null;
 	}
 	
 	public String front(){
-		if (this.head.show()!=null) {
-			String data=this.head.show();
+		if (this.head.next!=null) {
+			String data=this.head.next.show();
 			return data;
 		}
 		// TODO Implement front
 		return null;
 	}
-
 }

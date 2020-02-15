@@ -33,25 +33,93 @@ public class QueueTest {
 		testEmpty(new ListQueue(),new JavaQueue());
 		testOne(new ListQueue(),new JavaQueue());
 		testMany(new ListQueue(),new JavaQueue());
-			
+		System.out.print(testMany(new ListQueue(),new JavaQueue()));	
 	}
 	
 	public static boolean testEmpty(ListQueue yourQueue, JavaQueue correctQueue){
 		//TODO implement a test of the three functions when the queues are empty
 		//Compare the result of your queue  against the java implementation
-		return false;
+		if (yourQueue.front()!=correctQueue.front()) {
+			return false;
+		}
+		if(yourQueue.dequeue()!=correctQueue.dequeue()) {
+			return false;
+		}
+		if (yourQueue.front()!=correctQueue.front()) {
+			return false;
+		}
+		yourQueue.enqueue("a");
+		correctQueue.enqueue("a");
+		if (yourQueue.front()!=correctQueue.front()) {
+			return false;
+		}
+		return true;
 	}
 	
 	public static boolean testOne(ListQueue a, JavaQueue b){
 		//TODO implement a test of the three functions when the queues have one element
 		//Compare the result of your queue  against the java implementation
-		return false;
+		a.enqueue("a");
+		b.enqueue("a");
+		if (a.front()!=b.front()) {
+			return false;
+		}
+		if(a.dequeue()!=b.dequeue()) {
+			return false;
+		}
+		if (a.front()!=b.front()) {
+			return false;
+		}
+		a.enqueue("b");
+		b.enqueue("b");
+		if (a.front()!=b.front()) {
+			return false;
+		}
+		return true;
 	}
 	
 	public static boolean testMany(ListQueue a, JavaQueue b){
 		//TODO implement a test of the three functions when the queues have many elements
 		//Compare the result of your queue  against the java implementation
 		//More than one test may be necessary
-		return false;
+		a.enqueue("a");
+		b.enqueue("a");
+		a.enqueue("b");
+		b.enqueue("b");
+		if (a.front()!=b.front()) {
+			return false;
+		}
+		if(a.dequeue()!=b.dequeue()) {
+			return false;
+		}
+		if (a.front()!=b.front()) {
+			return false;
+		}
+		a.enqueue("c");
+		b.enqueue("c");
+		if (a.front()!=b.front()) {
+			return false;
+		}
+		// second time
+		a.enqueue("a");
+		b.enqueue("a");
+		a.enqueue("b");
+		b.enqueue("b");
+		a.enqueue("c");
+		b.enqueue("c");
+		a.enqueue("d");
+		b.enqueue("d");
+		if (a.front()!=b.front()) {
+			return false;
+		}
+		if(a.dequeue()!=b.dequeue()) {
+			return false;
+		}
+		if (a.front()!=b.front()) {
+			return false;
+		}
+		
+		
+		return true;
 	}
 }
