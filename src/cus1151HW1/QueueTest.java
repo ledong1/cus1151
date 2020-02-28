@@ -33,7 +33,12 @@ public class QueueTest {
 		testEmpty(new ListQueue(),new JavaQueue());
 		testOne(new ListQueue(),new JavaQueue());
 		testMany(new ListQueue(),new JavaQueue());
-		System.out.print(testMany(new ListQueue(),new JavaQueue()));	
+		System.out.println("Result for test Empty£º");
+		System.out.println(testEmpty(new ListQueue(),new JavaQueue()));
+		System.out.println("Result for test One£º");
+		System.out.println(testOne(new ListQueue(),new JavaQueue()));
+		System.out.println("Result for test Many£º");
+		System.out.println(testMany(new ListQueue(),new JavaQueue()));
 	}
 	
 	public static boolean testEmpty(ListQueue yourQueue, JavaQueue correctQueue){
