@@ -129,7 +129,7 @@ class Test{
 
     public static void main(String[] args){
 
-            Test T = new Test("datafile.txt"); 	// THIS WILL CREATE YOUR BST AND FILL IT 
+            Test T = new Test("C:/eclipseWorkspace/cus1151/src/cus1151PJ2/datafile.txt"); 	// THIS WILL CREATE YOUR BST AND FILL IT 
             									// WITH THE INFORMATION FROM THE DATAFILE
             
             /* This line of code should return the first record in the linked list for 
@@ -146,5 +146,7 @@ class Test{
             
             T.a.print(); //Prints BST after the 3 deletions
             // THIS AREA IS FOR YOUR USE TO HELP TEST THAT YOUR BST WORKS
+            
+            
     }
 }
