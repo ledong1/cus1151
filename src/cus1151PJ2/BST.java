@@ -31,6 +31,7 @@ class BST{
         	//HINT: Add the Record r to the *front* of your linked list.
         	r.next = this.record;
         	this.record = r;
+        	this.size+=1;
         }
         
         private void add(String k, Record rec){
@@ -67,32 +68,52 @@ class BST{
 //        }
         
         private Node find(String k){
-        	//check the keyword in the given node inside the BST
-        	
+        	//find the keyword in the given node inside the BST
+        	Node t=new Node(null);
             if(k.compareTo(this.keyword)<0) {
             	if(this.l==null) {
             		return null;
             	}
-            	this.l.find(k);
+            	t=this.l.find(k);
             }else if(k.compareTo(this.keyword)>0) {
             	if(this.r==null) {
             		return null;
             	}
-            	this.r.find(k);	
+            	t=this.r.find(k);	
+            }else {
+            	t=this;
             }
-            return this;	             
+            return t;
+            	             
         }
         
         private Node delete(String k){
         	//delete the keyword in the given node inside the BST
+//        	if(this==null) {
+//        		return null;
+//        	}
             if(k.compareTo(this.keyword)<0) {
-            	this.l.find(k);
+//            	if(this.l==null) {
+//            		return null;
+//            	}
+            	this.l=this.l.delete(k);
             }else if(k.compareTo(this.keyword)>0) {
-            	if(this.r==null) {
-            		return null;
-            	}
-            	this.r.find(k);	
-            }
+//            	if(this.r==null) {
+//            		return null;
+//            	}
+            	this.r=this.r.delete(k);	
+            }else {
+            	if(this.l==null) {
+            		return this.r;
+            	}else if(this.r==null) {
+            		return this.l;
+            	}            	
+            	Node t=this.r.min();
+            	this.keyword=t.keyword;
+            	this.record=t.record;
+            	this.size=t.size;
+            	this.r=this.r.delete(keyword);            	
+            }            
             return this;	             
         }
         
@@ -100,11 +121,14 @@ class BST{
         
         
         private Node min(){
-        	//get the main child of the given node inside the BST
+        	//get the main child of the given node inside the BST then 
         	Node min=this;
         	while (min.l!=null) {
         		min=min.l;
         	}
+//        	Node t=new Node(null);
+//        	t=min;
+//        	min=null;
         	return min;
         }
         
@@ -162,10 +186,8 @@ class BST{
     	// You may not use lazy deletion and if the keyword is not in the BST, 
     	// the function should do nothing.
     	if (this.contains(keyword)){
-			Node temp = this.root.find(keyword);
-			
-    	}
-    	
+			Node temp = this.root.delete(keyword);			
+    	}    	
     }
 
     public void print(){

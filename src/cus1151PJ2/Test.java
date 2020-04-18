@@ -136,10 +136,11 @@ class Test{
              * a given keyword.
              * It may be useful for your personal debugging
              */ 
-            T.a.get_records("medical" /*Insert keyword to be found here. "medical" is an example*/).print();
+//            System.out.print(T.a.contains("medica"));
+//            T.a.get_records("medical" /*Insert keyword to be found here. "medical" is an example*/).print();
             
             T.a.print(); // Prints titles of all elements in the BST sorted by keyword.
-            
+//            System.out.println("===================================================================================");
             T.a.delete("medical");
             T.a.delete("learning");
             T.a.delete("concepts");
