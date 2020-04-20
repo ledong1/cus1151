@@ -51,21 +51,6 @@ class BST{
             }                   
         }  
         
-//        private boolean check(String k){
-//        	//check the keyword in the given node inside the BST
-//            if(k.compareTo(this.keyword)<0) {
-//            	if(this.l==null) {
-//            		return false;
-//            	}
-//            	this.l.check(k);
-//            }else if(k.compareTo(this.keyword)>0) {
-//            	if(this.r==null) {
-//            		return false;
-//            	}
-//            	this.r.check(k);	
-//            }
-//            return true;	             
-//        }
         
         private Node find(String k){
         	//find the keyword in the given node inside the BST
@@ -89,18 +74,9 @@ class BST{
         
         private Node delete(String k){
         	//delete the keyword in the given node inside the BST
-//        	if(this==null) {
-//        		return null;
-//        	}
             if(k.compareTo(this.keyword)<0) {
-//            	if(this.l==null) {
-//            		return null;
-//            	}
             	this.l=this.l.delete(k);
             }else if(k.compareTo(this.keyword)>0) {
-//            	if(this.r==null) {
-//            		return null;
-//            	}
             	this.r=this.r.delete(k);	
             }else {
             	if(this.l==null) {
@@ -126,9 +102,6 @@ class BST{
         	while (min.l!=null) {
         		min=min.l;
         	}
-//        	Node t=new Node(null);
-//        	t=min;
-//        	min=null;
         	return min;
         }
         
